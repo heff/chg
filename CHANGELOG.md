@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 0.1.6 (2014-01-27)
+* Added support for release types, to auto increment by
+
 ## 0.1.5 (2014-01-27)
 * Release prompt now has the current package version as the default
 
