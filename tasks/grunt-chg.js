@@ -14,27 +14,34 @@ module.exports = function(grunt) {
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  function callback(err, success){
-    if (err) {
-      return grunt.log.error(err);
-    } else if (success) {
-      grunt.log.writeln(success);
+  function getCallback(done) {
+    return function(err, success){
+      if (err) {
+        return grunt.log.error(err);
+      } else if (success) {
+        grunt.log.writeln(success);
+        done();
+      }
     }
   }
 
   grunt.registerTask('chg-init', 'Create the CHANGELOG.md file', function() {
-    commands.init({}, callback);
+    var done =  this.async();
+    commands.init({}, getCallback(done));
   });
 
-  grunt.registerTask('chg-add', 'Add a line to the changelog', function() {
-    commands.add(null, {}, callback);
+  grunt.registerTask('chg-add', 'Add a line to the changelog', function(line) {
+    var done =  this.async();
+    commands.add(line, {}, getCallback(done));
   });
 
-  grunt.registerTask('chg-release', 'Add a new release and move unrleased changes under it', function() {
-    commands.release(null, {}, callback);
+  grunt.registerTask('chg-release', 'Add a new release and move unrleased changes under it', function(version) {
+    var done =  this.async();
+    commands.release(version, {}, getCallback(done));
   });
 
   grunt.registerTask('chg-delete', 'Delete the changelog', function() {
-    commands.release({}, callback);
+    var done =  this.async();
+    commands.release({}, getCallback(done));
   });
 };
