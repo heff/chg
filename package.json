@@ -27,6 +27,9 @@
   "scripts": {
     "test": "grunt test"
   },
+  "bin" : { 
+    "chg" : "./bin/chg" 
+  },
   "devDependencies": {
     "grunt-cli": "~0.1.0",
     "grunt": "~0.4.0",
