@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Added grunt as a dependency
+_(none)_
 
 --------------------
+
+## 0.1.3 (2014-01-27)
+* Added grunt as a dependency
 
 ## 0.1.2 (2014-01-27)
 * Added test task for Travis CI
