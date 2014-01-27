@@ -27,8 +27,8 @@
   "scripts": {
     "test": "grunt test"
   },
-  "bin" : { 
-    "chg" : "./bin/chg" 
+  "bin": {
+    "chg": "./bin/chg"
   },
   "devDependencies": {
     "grunt-cli": "~0.1.0",
@@ -41,6 +41,7 @@
     "moment": "~2.5.1",
     "prompt": "~0.2.12",
     "shelljs": "~0.2.6",
-    "commander": "~2.1.0"
+    "commander": "~2.1.0",
+    "semver": "~2.2.1"
   }
 }
