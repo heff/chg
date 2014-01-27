@@ -1,6 +1,6 @@
 {
   "name": "chg",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "lib/changelog.js",
   "description": "simple changelog manager",
   "homepage": "https://github.com/heff/chg",
