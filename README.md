@@ -3,9 +3,10 @@
 unfancy release history tracking
 
 functions:
-- `init` - create a CHANGELOG.md file
-- `add` - add new changes to the changelog under a 'HEAD (Unreleased)' heading
-- `release` - move all unreleased changes under a new release version
+
+- `init` - create a CHANGELOG.md file  
+- `add` - add new changes to the changelog under a 'HEAD (Unreleased)' heading  
+- `release` - move all unreleased changes under a new release version  
 
 `chg` can be useful when built into a release/deploy script or paired with a pull request merging script like [pulley](https://github.com/jeresig/pulley).
 

@@ -2,7 +2,7 @@
   "name": "chg",
   "version": "0.1.1",
   "main": "lib/changelog.js",
-  "description": "simple changelog manager",
+  "description": "simple changelog/release history manager",
   "homepage": "https://github.com/heff/chg",
   "bugs": "https://github.com/heff/chg/issues",
   "author": {
