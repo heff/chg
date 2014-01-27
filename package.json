@@ -1,0 +1,38 @@
+{
+  "name": "chg",
+  "version": "0.1.0",
+  "main": "lib/changelog.js",
+  "description": "simple changelog manager",
+  "homepage": "https://github.com/heff/chg",
+  "bugs": "https://github.com/heff/chg/issues",
+  "author": {
+    "name": "heff"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heff/chg"
+  },
+  "licenses": [
+    {
+      "type": "Apache",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  ],
+  "keywords": [
+    "changelog",
+    "history",
+    "release",
+    "change"
+  ],
+  "devDependencies": {
+    "grunt-contrib-jshint": "~0.6.0",
+    "grunt-contrib-nodeunit": "~0.2.0",
+    "grunt-contrib-watch": "~0.5.0"
+  },
+  "dependencies": {
+    "moment": "~2.5.1",
+    "prompt": "~0.2.12",
+    "shelljs": "~0.2.6",
+    "commander": "~2.1.0"
+  }
+}
