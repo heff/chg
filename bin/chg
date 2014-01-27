@@ -1,0 +1,60 @@
+#!/usr/bin/env node
+'use strict';
+
+var pkg = require('../package.json');
+var commands = require('../lib/commands.js');
+
+var program = require('commander');
+var prompt = require('prompt');
+
+function callback(err, success){
+  if (err) {
+    return console.log('ERROR: '+err);
+  } else if (success) {
+    console.log(success);
+  }
+}
+
+program.version(pkg.version);
+
+program
+  .command('init')
+  .description('Create the CHANGELOG.md in the current directory')
+  .action(function(args){
+    commands.init({}, callback);
+  });
+
+program
+  .command('add [line]')
+  .description('Add one line to the changelog')
+  .action(function(line, info){
+    commands.add(line, {}, callback);
+  });
+
+program
+  .command('release [version]')
+  .description('Move unreleased changes under a new release heading')
+  .option('-d, --date [date]', 'Specify a date (defaults to today)')
+  .action(function(version, info){
+    var options = {};
+
+    if (info.date) {
+      options.date = info.date;
+    }
+
+    commands.release(version, options, callback);
+  });
+
+program
+  .command('delete')
+  .description('Delete the changelog')
+  .action(function(info){
+    commands.delete({}, callback);
+  });
+
+program.parse(process.argv);
+
+// default to help if no commands
+if (program.args.length === 0) {
+  program.help();
+}
