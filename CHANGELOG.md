@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 0.1.5 (2014-01-27)
+* Release prompt now has the current package version as the default
+
 ## 0.1.4 (2014-01-27)
 * Added line and version args to grunt cli commands
 * Made grunt commands async
