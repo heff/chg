@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 0.1.8 (2014-01-31)
+* Shiny new readme updates
+
 ## 0.1.7 (2014-01-31)
 * Fixed linting issue that was breaking tests
 
