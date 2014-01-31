@@ -2,6 +2,8 @@
 
 unfancy release history tracking
 
+[blog post](http://blog.heff.me/post/75189221194/introducing-chg-a-simple-changelog-cli-lib)
+
 functions:
 
 - `init` - create a CHANGELOG.md file  
@@ -29,7 +31,7 @@ CHANGELOG
 * Added dropshadows to EVERYTHING
 
 ## 1.1.1 (2002-08-16)
-* Added "dot.gifs" to ~300 table cells to fix layout issues
+* Added a dot.gif to 3,000 table cells to fix layout issues
 
 ## 1.1.0 (2002-05-17)
 * Removed horrible Flash, table layout ftw
@@ -110,6 +112,62 @@ grunt chg-add
 
 # create a release
 grunt chg-release
+```
+
+## Functions
+
+### init()
+Creates a CHANGELOG.md file in the current directory.
+
+```bash
+chg init
+```
+
+```markdown
+CHANGELOG
+=========
+
+## HEAD (Unreleased)
+* _(none)_
+
+--------------------
+```
+
+### add(line:String)
+Add a line to the change log. The first argument is the line to add.
+
+```bash
+chg add "My new change!"
+```
+
+```markdown
+CHANGELOG
+=========
+
+## HEAD (Unreleased)
+* My new change!
+
+--------------------
+```
+
+### release(version:String)
+Add a line to the change log. The first argument is the version to be used as the release version.
+
+```bash
+chg release "v0.1.0"
+```
+
+```markdown
+CHANGELOG
+=========
+
+## HEAD (Unreleased)
+* _(none)_
+
+--------------------
+
+## 0.1.0 (2014-01-31)
+* My new change!
 ```
 
 ## Release History
