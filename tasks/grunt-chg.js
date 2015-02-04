@@ -42,6 +42,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('chg-delete', 'Delete the changelog', function() {
     var done =  this.async();
-    commands.release({}, getCallback(done));
+    commands.delete({}, getCallback(done));
   });
 };
