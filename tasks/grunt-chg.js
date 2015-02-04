@@ -17,11 +17,11 @@ module.exports = function(grunt) {
   function getCallback(done) {
     return function(err, success){
       if (err) {
-        return grunt.log.error(err);
-      } else if (success) {
-        grunt.log.writeln(success);
-        done();
+        grunt.log.error(err.message);
+        return done(false);
       }
+      grunt.log.writeln(success);
+      done(true);
     }
   }
 
@@ -37,7 +37,15 @@ module.exports = function(grunt) {
 
   grunt.registerTask('chg-release', 'Add a new release and move unrleased changes under it', function(version) {
     var done =  this.async();
-    commands.release(version, {}, getCallback(done));
+    commands.release(version, {}, function(err, release) {
+      if (err) {
+        grunt.log.error(err.message);
+        done(false);
+      }
+
+      grunt.config.set('chg.release.title', release.title);
+      grunt.config.set('chg.release.changes', release.changes);
+    });
   });
 
   grunt.registerTask('chg-delete', 'Delete the changelog', function() {
