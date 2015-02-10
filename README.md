@@ -87,6 +87,10 @@ chg.add('My first change', {}, callback);
 
 // create a release
 chg.release('0.0.1', {}, callback);
+
+// each command can take a callback, but each also returns synchronously
+var changeData = chg.release('0.0.1', {});
+// changeData = { title: '0.0.1', changes: '* Removed crusty semantic html, javascript app ftw', changeLog: '/* entire changelog */' }
 ```
 
 ## Using as a grunt plugin
