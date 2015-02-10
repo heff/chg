@@ -7,28 +7,28 @@ var commands = require('../lib/commands.js');
 var program = require('commander');
 var prompt = require('prompt');
 
-function callback(err, success){
-  if (err) {
-    return console.log('ERROR: '+err);
-  } else if (success) {
-    console.log(success);
-  }
-}
-
 program.version(pkg.version);
 
 program
   .command('init')
   .description('Create the CHANGELOG.md in the current directory')
   .action(function(args){
-    commands.init({}, callback);
+    commands.init({}, function(err, changeLogFile) {
+      if (err) return console.error(err.message);
+
+      console.log(changeLogFile +' created');
+    });
   });
 
 program
   .command('add [line]')
   .description('Add one line to the changelog')
   .action(function(line, info){
-    commands.add(line, {}, callback);
+    commands.add(line, {}, function(err, line) {
+      if (err) return console.error(err.message);
+
+      console.log('Change added: '+ line);
+    });
   });
 
 program
@@ -42,14 +42,22 @@ program
       options.date = info.date;
     }
 
-    commands.release(version, options, callback);
+    commands.release(version, options, function(err, changes) {
+      if (err) return console.error(err.message);
+
+      console.log('Changelog updated with new release: '+ changes.title);
+    });
   });
 
 program
   .command('delete')
   .description('Delete the changelog')
   .action(function(info){
-    commands.delete({}, callback);
+    commands.delete({}, function(err, changeLogFile) {
+      if (err) return console.error(err.message);
+
+      console.log(changeLogFile +' deleted.');
+    });
   });
 
 program.parse(process.argv);
