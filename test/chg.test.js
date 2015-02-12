@@ -94,6 +94,24 @@ describe('chg', function(){
     });
   });
 
+  describe('#find()', function() {
+    var findTitle, findResult;
+
+    before(function() {
+      findTitle = '0.0.2';
+      findResult = chg.find(findTitle);
+    });
+
+    it('finds the section under the specified title', function() {
+      expect(findResult.title).to.contain(findTitle);
+    });
+
+    it('returns the contents under that title', function() {
+      expect(findResult.changes).to.contain('Test add with');
+      expect(findResult.changes).to.contain('Test add again');
+    });
+  });
+
   describe('#delete()', function() {
     before(function() {
       chg.delete();
