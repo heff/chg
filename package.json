@@ -1,7 +1,7 @@
 {
   "name": "chg",
   "version": "0.1.8",
-  "main": "lib/changelog.js",
+  "main": "lib/chg.js",
   "description": "simple changelog/release history manager",
   "homepage": "https://github.com/heff/chg",
   "bugs": "https://github.com/heff/chg/issues",
@@ -30,13 +30,14 @@
   "bin": {
     "chg": "./bin/chg"
   },
-  "main": "lib/chg.js",
   "devDependencies": {
-    "grunt-cli": "~0.1.0",
+    "chai": "^1.10.0",
     "grunt": "~0.4.0",
+    "grunt-cli": "~0.1.0",
     "grunt-contrib-jshint": "~0.6.0",
     "grunt-contrib-nodeunit": "~0.2.0",
-    "grunt-contrib-watch": "~0.5.0"
+    "grunt-contrib-watch": "~0.5.0",
+    "mocha": "^2.1.0"
   },
   "dependencies": {
     "moment": "~2.5.1",
