@@ -184,7 +184,7 @@ Finds a release given a version.
 Delete the current changelog
 
 ## Release History
-See [CHANGELOG.md](CHANGELOG.md) :scream-cat:
+See [CHANGELOG.md](CHANGELOG.md) :scream_cat:
 
 ## License
 Copyright (c) 2014 heff. Licensed under the Apache license.
