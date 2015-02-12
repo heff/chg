@@ -48,6 +48,16 @@ module.exports = function(grunt) {
     });
   });
 
+  grunt.registerTask('chg-find', 'Find a release in the changelog', function(version) {
+    var release = commands.find(version);
+
+    if (Object.keys(release).length === 0) {
+      return grunt.log.write('Release not found in the changelog');
+    }
+
+    return release;
+  });
+
   grunt.registerTask('chg-delete', 'Delete the changelog', function() {
     var done =  this.async();
     commands.delete({}, getCallback(done));

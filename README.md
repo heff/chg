@@ -89,8 +89,11 @@ chg.add('My first change', {}, callback);
 chg.release('0.0.1', {}, callback);
 
 // each command can take a callback, but each also returns synchronously
-var changeData = chg.release('0.0.1', {});
+var changeData = chg.release('3.0.0', {});
 // changeData = { title: '0.0.1', changes: '* Removed crusty semantic html, javascript app ftw', changeLog: '/* entire changelog */' }
+
+chg.find('1.1.1');
+// => { title: '## 1.1.1 (2002-08-16)', changes: ['* Added a dot.gif to 3,000 table cells to fix layout issues'], changesRaw: '* Added a dot.gif to 3,000 table cells to fix layout issues' }
 ```
 
 ## Using as a grunt plugin
@@ -173,6 +176,12 @@ CHANGELOG
 ## 0.1.0 (2014-01-31)
 * My new change!
 ```
+
+### find(version:String)
+Finds a release given a version.
+
+### delete()
+Delete the current changelog
 
 ## Release History
 See [CHANGELOG.md](CHANGELOG.md) :scream-cat:

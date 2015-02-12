@@ -106,10 +106,17 @@ describe('chg', function(){
       expect(findResult.title).to.contain(findTitle);
     });
 
-    it('returns the contents under that title', function() {
-      expect(findResult.changes).to.contain('Test add with');
-      expect(findResult.changes).to.contain('Test add again');
+    it('returns an array of the changes', function() {
+      expect(findResult.changes).to.be.instanceOf(Array);
+      expect(findResult.changes).to.include('* Test add again');
     });
+
+    it('returns the contents under that title as raw text', function() {
+      expect(findResult.changesRaw).to.contain('Test add with');
+      expect(findResult.changesRaw).to.contain('Test add again');
+    });
+
+    it
   });
 
   describe('#delete()', function() {
