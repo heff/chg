@@ -121,11 +121,11 @@ grunt chg-add
 grunt chg-release
 ```
 
-## Using as a npm script
+## Using as a npm script (requires npm v2.13.0 or higher)
 
 ```json
 "scripts": {
-  "version": "version": "chg release -y && git add -A CHANGELOG.md"
+  "version": "chg release -y && git add -A CHANGELOG.md"
 }
 ```
 
