@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Added -y option to skip prompt in release
+_(none)_
 
 --------------------
+
+## 0.3.0 (2015-10-22)
+* Added -y option to skip prompt in release
 
 ## 0.2.0 (2015-02-25)
 * Added a find command for getting version items
