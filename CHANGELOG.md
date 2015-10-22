@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* added -y option to skip prompt in release
+* Added -y option to skip prompt in release
 
 --------------------
+
+## 0.2.0 (2015-02-25)
+* Added a find command for getting version items
 
 ## 0.1.8 (2014-01-31)
 * Shiny new readme updates
@@ -31,4 +34,3 @@ CHANGELOG
 
 ## 0.1.1 (2014-01-27)
 * First version
-
