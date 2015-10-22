@@ -58,7 +58,7 @@ program
   .command('find [version]')
   .description('Find a specific release by version number')
   .action(function(version) {
-    commands.find(version, options, function(err, release) {
+    commands.find(version, {}, function(err, release) {
       if (err) return console.error(err.message);
 
       console.log('Title: '+ release.title);
