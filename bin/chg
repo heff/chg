@@ -35,11 +35,16 @@ program
   .command('release [version]')
   .description('Move unreleased changes under a new release heading')
   .option('-d, --date [date]', 'Specify a date (defaults to today)')
+  .option('-y, --yes', 'Use defaults, do not prompt you for options')
   .action(function(version, info){
     var options = {};
 
     if (info.date) {
       options.date = info.date;
+    }
+
+    if (info.yes) {
+      options.noprompt = true;
     }
 
     commands.release(version, options, function(err, changes) {
