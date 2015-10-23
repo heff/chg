@@ -45,6 +45,7 @@ module.exports = function(grunt) {
 
       grunt.config.set('chg.release.title', release.title);
       grunt.config.set('chg.release.changes', release.changes);
+      done();
     });
   });
 
