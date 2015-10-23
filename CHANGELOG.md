@@ -6,6 +6,9 @@ _(none)_
 
 --------------------
 
+## 0.3.1 (2015-10-23)
+* Fixed a bug where grunt chg-release would hang indefinitely ([view](https://github.com/heff/chg/pull/7))
+
 ## 0.3.0 (2015-10-22)
 * Added -y option to skip prompt in release
 
