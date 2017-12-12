@@ -41,10 +41,10 @@
     "mocha": "^2.1.0"
   },
   "dependencies": {
-    "moment": "~2.5.1",
+    "commander": "^2.12.2",
+    "moment": "^2.19.4",
     "prompt": "~0.2.12",
-    "shelljs": "~0.2.6",
-    "commander": "~2.1.0",
-    "semver": "~2.2.1"
+    "semver": "^5.4.1",
+    "shelljs": "~0.2.6"
   }
 }
