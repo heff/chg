@@ -2,9 +2,12 @@ CHANGELOG
 =========
 
 ## HEAD (Unreleased)
-* Bumped dependecies
+_(none)_
 
 --------------------
+
+## 0.3.3 (2017-12-12)
+* Bumped dependecies
 
 ## 0.3.2 (2015-10-23)
 * Fixed an error when using find in the cli
