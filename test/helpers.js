@@ -2,15 +2,15 @@
 
 var fs = require('fs');
 
-function loadFixture(fileName) {
+exports.loadFixture = function(fileName) {
   return fs.readFileSync('../test/fixtures/'+fileName, 'utf8');
 }
 
-function readChangelog() {
+exports.readChangelog = function() {
   return fs.readFileSync('./CHANGELOG.md', 'utf8');
 }
 
-// These helpers are only used in the test suite, so we'll add them to the
-// global namespace to avoid having to retype helpers every time.
-global.loadFixture = module.exports['loadFixture'] = loadFixture;
-global.readChangelog = module.exports['readChangelog'] = readChangelog;
+exports.resetFixture = function(fileName) {
+  const content = fs.readFileSync('../test/fixtures/'+fileName, 'utf8');
+  return fs.writeFileSync('./CHANGELOG.md', content, 'utf8');
+}
