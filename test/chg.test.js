@@ -1,10 +1,14 @@
 'use strict';
 
 var expect = require('chai').expect;
-var { loadFixture, readChangelog, resetFixture } = require('./helpers');
+var helpers = require('./helpers');
 var shell = require('shelljs');
 var fs = require('fs');
 var chg = require('../');
+
+var loadFixture = helpers.loadFixture;
+var readChangelog = helpers.readChangelog;
+var resetFixture = helpers.resetFixture;
 
 describe('chg', function(){
   var tmpDirName;
