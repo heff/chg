@@ -11,6 +11,6 @@ exports.readChangelog = function() {
 }
 
 exports.resetFixture = function(fileName) {
-  const content = fs.readFileSync('../test/fixtures/'+fileName, 'utf8');
+  var content = fs.readFileSync('../test/fixtures/'+fileName, 'utf8');
   return fs.writeFileSync('./CHANGELOG.md', content, 'utf8');
 }
