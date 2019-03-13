@@ -6,6 +6,10 @@ var shell = require('shelljs');
 var fs = require('fs');
 var chg = require('../');
 
+var loadFixture = helpers.loadFixture;
+var readChangelog = helpers.readChangelog;
+var resetFixture = helpers.resetFixture;
+
 describe('chg', function(){
   var tmpDirName;
 
@@ -19,7 +23,6 @@ describe('chg', function(){
     shell.cd('..');
     shell.rm('-rf', tmpDirName);
   });
-
 
   describe('#init()', function(){
     var chgResult;
@@ -38,7 +41,10 @@ describe('chg', function(){
   describe('#add()', function() {
     var addResult;
 
-    before(function() { addResult = chg.add('Test add'); });
+    before(function() {
+      resetFixture('init.md');
+      addResult = chg.add('Test add');
+    });
 
     it('adds a new line to the changelog', function() {
       expect(readChangelog()).to.equal(loadFixture('add.md'));
@@ -53,6 +59,7 @@ describe('chg', function(){
     var releaseResult, releaseTitle, releaseDate;
 
     before(function() {
+      resetFixture('add.md');
       releaseTitle = '0.0.1';
       releaseDate = '12/12/12';
       releaseResult = chg.release(releaseTitle, { date: releaseDate });
@@ -98,6 +105,7 @@ describe('chg', function(){
     var findTitle, findResult;
 
     before(function() {
+      resetFixture('release2.md');
       findTitle = '0.0.2';
       findResult = chg.find(findTitle);
     });
@@ -115,12 +123,11 @@ describe('chg', function(){
       expect(findResult.changesRaw).to.contain('Test add with');
       expect(findResult.changesRaw).to.contain('Test add again');
     });
-
-    it
   });
 
   describe('#delete()', function() {
     before(function() {
+      resetFixture('release2.md');
       chg.delete();
     });
 
