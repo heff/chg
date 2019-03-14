@@ -4,7 +4,11 @@ CHANGELOG
 ## HEAD (Unreleased)
 _(none)_
 
+
 --------------------
+
+## 0.4.0 (2019-03-13)
+* Added triple hyphen support ([#9](https://github.com/heff/chg/pull/9))
 
 ## 0.3.3 (2017-12-12)
 * Bumped dependecies
